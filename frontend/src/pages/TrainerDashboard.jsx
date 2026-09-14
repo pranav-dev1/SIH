@@ -24,6 +24,7 @@ import Sidebar from '../components/Sidebar';
 import StatsCard from '../components/StatsCard';
 import API from '../services/api';
 import { useAuth } from '../context/AuthContext';
+import { videoForTrainerModule } from '../utils/courseVideos';
 
 const TrainerDashboard = () => {
   const { user } = useAuth();
@@ -71,13 +72,25 @@ const TrainerDashboard = () => {
             id: 'm1',
             title: 'Module 1: Foundations & Core Concepts',
             description: 'Introduction to foundational knowledge and standards.',
-            lessons: [{ id: 'l1', title: '1.1 Principles', content: newDescription }]
+            lessons: [{
+              id: 'l1',
+              title: '1.1 Principles',
+              content: newDescription,
+              videoUrl: videoForTrainerModule(newCategory, 0).url,
+              videoTitle: videoForTrainerModule(newCategory, 0).title
+            }]
           },
           {
             id: 'm2',
             title: 'Module 2: Practical Field Application',
             description: 'Hands-on operational protocols and team execution.',
-            lessons: [{ id: 'l2', title: '2.1 Implementation Guide', content: 'Operational deployment guidelines.' }]
+            lessons: [{
+              id: 'l2',
+              title: '2.1 Implementation Guide',
+              content: 'Operational deployment guidelines.',
+              videoUrl: videoForTrainerModule(newCategory, 1).url,
+              videoTitle: videoForTrainerModule(newCategory, 1).title
+            }]
           }
         ]
       });

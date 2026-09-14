@@ -1,19 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import {
-  BookOpen,
   CheckCircle2,
   ChevronLeft,
   ChevronRight,
   FileText,
-  Video,
   Download,
-  Award,
-  Sparkles,
-  Play
+  Award
 } from 'lucide-react';
 import API from '../services/api';
 import AiAssistantModal from '../components/AiAssistantModal';
+import LessonVideoPlayer from '../components/LessonVideoPlayer';
+import { resolveLessonVideo } from '../utils/courseVideos';
 
 const LearningPlayer = () => {
   const { id } = useParams();
@@ -22,8 +20,6 @@ const LearningPlayer = () => {
   const [activeModuleIdx, setActiveModuleIdx] = useState(0);
   const [activeLessonIdx, setActiveLessonIdx] = useState(0);
   const [loading, setLoading] = useState(true);
-  const navigate = useNavigate();
-
   const fetchData = async () => {
     try {
       const res = await API.get(`/courses/${id}`);
@@ -54,6 +50,7 @@ const LearningPlayer = () => {
   const currentModule = modules[activeModuleIdx] || modules[0] || {};
   const lessons = currentModule.lessons || [];
   const currentLesson = lessons[activeLessonIdx] || lessons[0] || {};
+  const currentVideo = resolveLessonVideo(course, currentLesson, activeModuleIdx, activeLessonIdx);
 
   const completedModuleIds = enrollment ? enrollment.completedModuleIds || [] : [];
   const isCurrentModuleCompleted = completedModuleIds.includes(currentModule.id);
@@ -137,6 +134,24 @@ const LearningPlayer = () => {
                     </div>
                   </div>
                 </button>
+                {isActive && mod.lessons?.length > 0 && (
+                  <div className="px-3 pb-3 space-y-1">
+                    {mod.lessons.map((lesson, lIdx) => (
+                      <button
+                        key={lesson.id || lIdx}
+                        type="button"
+                        onClick={() => setActiveLessonIdx(lIdx)}
+                        className={`w-full text-left text-[11px] px-2.5 py-1.5 rounded-lg transition ${
+                          activeLessonIdx === lIdx
+                            ? 'bg-brand-600 text-white font-semibold'
+                            : 'text-slate-600 hover:bg-slate-100'
+                        }`}
+                      >
+                        {lesson.title}
+                      </button>
+                    ))}
+                  </div>
+                )}
               </div>
             );
           })}
@@ -168,22 +183,7 @@ const LearningPlayer = () => {
           </button>
         </div>
 
-        {/* Video / Resource Placeholder */}
-        <div className="bg-slate-900 text-white rounded-2xl p-6 sm:p-10 shadow-lg relative overflow-hidden flex flex-col items-center justify-center text-center space-y-4">
-          <div className="w-16 h-16 rounded-full bg-brand-600/80 flex items-center justify-center text-white shadow-xl cursor-pointer hover:scale-110 transition">
-            <Play className="w-8 h-8 fill-current ml-1" />
-          </div>
-          <div>
-            <h3 className="font-bold text-base text-white">Interactive Video Lesson Placeholder</h3>
-            <p className="text-xs text-slate-400 max-w-md mt-1">
-              "Capacity Building & Incident Field Operation Demonstration Video"
-            </p>
-          </div>
-          <div className="flex items-center gap-3 text-xs text-brand-300 font-mono pt-2">
-            <Video className="w-4 h-4" />
-            <span>HD Video Stream Ready (1080p)</span>
-          </div>
-        </div>
+        <LessonVideoPlayer video={currentVideo} lessonTitle={currentLesson.title} />
 
         {/* Lesson Body Content */}
         <div className="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm space-y-4">

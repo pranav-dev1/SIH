@@ -104,12 +104,16 @@ const seedCourses = [
             id: 'l1',
             title: '1.1 Fundamental Disaster Management Concepts',
             content: 'Disasters occur when hazards interact with vulnerable human populations and insufficient coping capacities. Disaster risk management aims to reduce hazard exposure, lessen vulnerability, and enhance community resilience.',
+            videoUrl: 'https://media.w3.org/2010/05/sintel/trailer.mp4',
+            videoTitle: 'Hazard Risk Reduction Briefing',
             resources: ['https://example.com/docs/hazard_primer.pdf']
           },
           {
             id: 'l2',
             title: '1.2 Early Warning Systems and Communication Protocols',
             content: 'Modern early warning systems integrate satellite monitoring, weather radars, and automated warning broadcasts via SMS, radio, and mobile emergency alerts to minimize loss of life.',
+            videoUrl: 'https://media.w3.org/2010/05/bunny/trailer.mp4',
+            videoTitle: 'Early Warning Systems Walkthrough',
             resources: ['https://example.com/docs/warning_sop.pdf']
           }
         ]
@@ -123,7 +127,17 @@ const seedCourses = [
             id: 'l3',
             title: '2.1 Evacuation Routing & Zone Mapping',
             content: 'Creating safe evacuation routes requires identifying flood zones, seismic fault lines, high-risk structures, and establishing clear signage and designated muster stations.',
+            videoUrl: 'https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4',
+            videoTitle: 'Evacuation Routing Demonstration',
             resources: ['https://example.com/docs/evacuation_guidelines.pdf']
+          },
+          {
+            id: 'l3b',
+            title: '2.2 Shelter Logistics and Relief Distribution',
+            content: 'Relief operations depend on pre-identified shelters, stocked emergency kits, transport corridors, and coordinated food and medical distribution teams.',
+            videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4',
+            videoTitle: 'Shelter and Relief Logistics',
+            resources: []
           }
         ]
       },
@@ -136,7 +150,17 @@ const seedCourses = [
             id: 'l4',
             title: '3.1 Post-Event Damage Audit Protocol',
             content: 'Standardized assessment tools enable disaster recovery teams to quantify structural damage, assess medical emergency needs, and coordinate international and national relief supplies.',
+            videoUrl: 'https://filesamples.com/samples/video/mp4/sample_640x360.mp4',
+            videoTitle: 'Post-Disaster Damage Audit',
             resources: ['https://example.com/docs/audit_checklist.pdf']
+          },
+          {
+            id: 'l4b',
+            title: '3.2 Relief Camp Public Health Control',
+            content: 'Camps require water, sanitation, vaccination, crowding control, and clear referral pathways to prevent disease outbreaks after a disaster.',
+            videoUrl: 'https://media.w3.org/2010/05/sintel/trailer_hd.mp4',
+            videoTitle: 'Public Health in Relief Camps',
+            resources: []
           }
         ]
       },
@@ -149,6 +173,8 @@ const seedCourses = [
             id: 'l5',
             title: '4.1 Pre-Quiz Review & Guidelines',
             content: 'Ensure you have reviewed all prior modules before attempting the 5-question final assessment. A score of 70% or higher is required to pass and earn your digital certificate.',
+            videoUrl: 'https://media.w3.org/2010/05/bunny/movie.mp4',
+            videoTitle: 'Certification Review Session',
             resources: []
           }
         ]
@@ -181,6 +207,16 @@ const seedCourses = [
             id: 'l1',
             title: '1.1 Principles of Meteorology',
             content: 'Atmospheric circulation drives regional weather patterns. Pressure gradients, moisture transport, and temperature differentials dictate monsoon timing and intensity.',
+            videoUrl: 'https://media.w3.org/2010/05/video/movie_300.mp4',
+            videoTitle: 'Meteorology Fundamentals',
+            resources: []
+          },
+          {
+            id: 'l1b',
+            title: '1.2 Monsoon and Cyclone Tracking',
+            content: 'Satellite imagery, pressure drops, and sea-surface temperatures help civic teams anticipate cyclone landfall and monsoon flood peaks.',
+            videoUrl: 'https://filesamples.com/samples/video/mp4/sample_960x540.mp4',
+            videoTitle: 'Monsoon and Cyclone Tracking',
             resources: []
           }
         ]
@@ -194,6 +230,8 @@ const seedCourses = [
             id: 'l2',
             title: '2.1 Urban Climate Action Plans',
             content: 'Cities must adopt green infrastructure, permeable pavements, and rooftop rain harvesting to combat flash floods and urban heat island effects.',
+            videoUrl: 'https://samplelib.com/lib/preview/mp4/sample-5s.mp4',
+            videoTitle: 'Urban Climate Action Plans',
             resources: []
           }
         ]
@@ -207,6 +245,8 @@ const seedCourses = [
             id: 'l3',
             title: '3.1 Evaluation Instructions',
             content: 'Complete the assessment to verify your grasp of weather indicators and climate adaptation strategies.',
+            videoUrl: 'https://samplelib.com/lib/preview/mp4/sample-10s.mp4',
+            videoTitle: 'Climate Adaptation Recap',
             resources: []
           }
         ]
@@ -239,6 +279,16 @@ const seedCourses = [
             id: 'l1',
             title: '1.1 Data Driven Decision Making',
             content: 'Evidence-based policy formulation relies on timely, structured data collection from IoT sensors, administrative records, and public feedback portals.',
+            videoUrl: 'https://samplelib.com/lib/preview/mp4/sample-15s.mp4',
+            videoTitle: 'Data-Driven Decision Making',
+            resources: []
+          },
+          {
+            id: 'l1b',
+            title: '1.2 Data Privacy and DPDP Compliance',
+            content: 'Public datasets must be anonymized, purpose-limited, and stored with access controls that comply with the Digital Personal Data Protection Act.',
+            videoUrl: 'https://samplelib.com/lib/preview/mp4/sample-20s.mp4',
+            videoTitle: 'Data Privacy and DPDP Basics',
             resources: []
           }
         ]
@@ -252,6 +302,8 @@ const seedCourses = [
             id: 'l2',
             title: '2.1 Test Guidelines',
             content: 'Answer the data literacy questions to finalize your course progress.',
+            videoUrl: 'https://samplelib.com/lib/preview/mp4/sample-30s.mp4',
+            videoTitle: 'Governance Data Evaluation',
             resources: []
           }
         ]
@@ -284,6 +336,16 @@ const seedCourses = [
             id: 'l1',
             title: '1.1 Threat Landscapes and Protection Strategies',
             content: 'Cyber hygiene involves strong unique passphrases, encrypted backups, vigilance against unknown links, and reporting suspicious security anomalies immediately.',
+            videoUrl: 'https://filesamples.com/samples/video/mp4/sample_1280x720.mp4',
+            videoTitle: 'Cybersecurity Threat Landscape',
+            resources: []
+          },
+          {
+            id: 'l1b',
+            title: '1.2 Secure Cloud Collaboration',
+            content: 'Use verified cloud workspaces, role-based sharing, multi-factor authentication, and encrypted document signing for official correspondence.',
+            videoUrl: 'https://filesamples.com/samples/video/mp4/sample_1920x1080.mp4',
+            videoTitle: 'Secure Cloud Collaboration',
             resources: []
           }
         ]
@@ -297,6 +359,8 @@ const seedCourses = [
             id: 'l2',
             title: '2.1 Final Quiz',
             content: 'Take the cybersecurity quiz to earn your security badge.',
+            videoUrl: 'https://filesamples.com/samples/video/mp4/sample_960x400_ocean_with_audio.mp4',
+            videoTitle: 'Phishing Prevention Drill',
             resources: []
           }
         ]
@@ -329,6 +393,16 @@ const seedCourses = [
             id: 'l1',
             title: '1.1 Principles of Circular Economy',
             content: 'Designing out waste, circulating products and materials at high value, and regenerating natural systems form the pillars of modern environmental policy.',
+            videoUrl: 'https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4',
+            videoTitle: 'Circular Economy Principles',
+            resources: []
+          },
+          {
+            id: 'l1b',
+            title: '1.2 Waste Segregation and Renewable Energy',
+            content: 'Source segregation, composting, and community solar or biogas units reduce landfill load and municipal carbon intensity.',
+            videoUrl: 'https://filesamples.com/samples/video/mp4/sample_960x540.mp4',
+            videoTitle: 'Waste Segregation Field Guide',
             resources: []
           }
         ]
@@ -342,6 +416,8 @@ const seedCourses = [
             id: 'l2',
             title: '2.1 Environmental Quiz',
             content: 'Complete the evaluation to verify your sustainability knowledge.',
+            videoUrl: 'https://samplelib.com/lib/preview/mp4/sample-5s.mp4',
+            videoTitle: 'Sustainability Knowledge Check',
             resources: []
           }
         ]
