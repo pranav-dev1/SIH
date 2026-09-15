@@ -36,19 +36,19 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto py-12 px-4">
-      <div className="text-center mb-8">
+    <div className="w-full max-w-md mx-auto py-8 sm:py-12 px-3 sm:px-4">
+      <div className="text-center mb-6 sm:mb-8">
         <div className="w-12 h-12 rounded-2xl bg-brand-600 flex items-center justify-center text-white mx-auto mb-3 shadow-lg shadow-brand-500/20">
           <BookOpen className="w-6 h-6" />
         </div>
-        <h1 className="text-2xl font-bold text-slate-900">Welcome Back</h1>
-        <p className="text-xs text-slate-500 mt-1">Sign in to access your Capacity Connect portal</p>
+        <h1 className="text-2xl sm:text-3xl font-bold text-slate-900">Welcome Back</h1>
+        <p className="text-xs sm:text-sm text-slate-500 mt-1">Sign in to access your Capacity Connect portal</p>
       </div>
 
       {/* Quick Demo Credentials Panel */}
       <DemoCredentialsBanner onSelect={handleDemoFill} />
 
-      <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+      <div className="bg-white p-4 sm:p-6 rounded-2xl border border-slate-200 shadow-sm">
         {error && (
           <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-xl text-red-700 text-xs flex items-center gap-2">
             <AlertCircle className="w-4 h-4 shrink-0 text-red-600" />

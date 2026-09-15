@@ -30,14 +30,14 @@ const DemoCredentialsBanner = ({ onSelect }) => {
   ];
 
   return (
-    <div className="bg-slate-900 border border-slate-700 rounded-xl p-4 text-white shadow-xl mb-6">
-      <div className="flex items-center gap-2 mb-3">
-        <KeyRound className="w-5 h-5 text-amber-400" />
-        <span className="font-semibold text-sm tracking-wide text-amber-400 uppercase">
+    <div className="bg-slate-900 border border-slate-700 rounded-xl p-3 sm:p-4 text-white shadow-xl mb-6">
+      <div className="flex items-start gap-2 mb-3">
+        <KeyRound className="w-5 h-5 shrink-0 mt-0.5 text-amber-400" />
+        <span className="min-w-0 font-semibold text-sm tracking-wide text-amber-400 uppercase break-words">
           SIH Hackathon Quick Demo Credentials (Click to Auto-Fill)
         </span>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+      <div className="grid grid-cols-1 xl:grid-cols-3 gap-3">
         {accounts.map((acc) => {
           const Icon = acc.icon;
           return (
@@ -45,18 +45,20 @@ const DemoCredentialsBanner = ({ onSelect }) => {
               key={acc.role}
               type="button"
               onClick={() => onSelect && onSelect(acc.email, acc.pass)}
-              className={`p-3 rounded-lg border text-left transition flex items-center justify-between ${acc.color}`}
+              className={`relative w-full min-w-0 overflow-hidden whitespace-normal p-3 pr-10 rounded-lg border text-left transition ${acc.color}`}
             >
-              <div>
-                <div className="flex items-center gap-2 mb-1">
-                  <span className={`text-xs font-bold px-2 py-0.5 rounded ${acc.badge}`}>
+              <div className="w-full min-w-0">
+                <div className="flex min-w-0 items-center gap-2 mb-1 overflow-hidden">
+                  <span className={`shrink-0 text-xs font-bold px-2 py-0.5 rounded ${acc.badge}`}>
                     {acc.role}
                   </span>
-                  <span className="text-xs text-slate-500 font-mono">Demo@123</span>
+                  <span className="min-w-0 flex-1 truncate text-xs text-slate-500 font-mono">Demo@123</span>
                 </div>
-                <div className="text-xs font-medium truncate font-mono text-slate-700">{acc.email}</div>
+                <div className="block w-full min-w-0 whitespace-normal break-all text-xs leading-4 font-medium font-mono text-slate-700">
+                  {acc.email}
+                </div>
               </div>
-              <Icon className="w-5 h-5 shrink-0 opacity-75" />
+              <Icon className="absolute right-3 top-1/2 w-5 h-5 -translate-y-1/2 opacity-75" />
             </button>
           );
         })}
